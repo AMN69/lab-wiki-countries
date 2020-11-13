@@ -12,7 +12,7 @@ import axios from 'axios';
 
 class App extends Component {
   state = {
-    countries: ['']
+    countries: []
   }
 
   componentDidMount = async () => {
@@ -23,13 +23,14 @@ class App extends Component {
   }
 
   render () {
+    console.log("countries", this.state.countries)
     return (
       <div className="App">
         <Navbar />
-        <CountriesList />
+        <CountriesList countries={this.state.countries}/>
           <Switch> 
             <Route exact path="/:id" render={props => (
-              <CountryDetails {...props} />
+              <CountryDetails countries={this.state.countries} {...props}/>
             )}/>
           </Switch>
 

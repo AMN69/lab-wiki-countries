@@ -3,11 +3,12 @@
 
 import React from 'react'
 // import { Link } from 'react-router-dom';
-import theCountries from '../countries.json';
+// import theCountries from '../countries.json';
 import { Link } from 'react-router-dom';
 
 const CountryDetails = (props) => {
     console.log("I'm within CountryDetails")
+    const theCountries = props.countries;
     // buscamos por id el project que coincide con el id que recibimos por parámetro. Es una función
     let getCountry = id => theCountries.find(obj => obj.cca3 === id);
 
@@ -40,7 +41,7 @@ const CountryDetails = (props) => {
                     <td>
                         <ul>
                             {foundCountry.borders.map((eachBorder) => {
-                                return <li><Link key={eachBorder} to={`/${eachBorder}`}>{getCountry(eachBorder).name.common}</Link></li>
+                                return <li key={eachBorder}><Link to={`/${eachBorder}`}>{getCountry(eachBorder).name.common}</Link></li>
                             })
                             }
                         </ul>

@@ -7,14 +7,12 @@ import CountriesList from './CountriesList';
 const Navbar = () => {
     return (
         <div id="root">
-            <div>
-                <nav class="navbar navbar-dark bg-primary mb-3">
-                    <div class="container">
-                        <a class="navbar-brand" href="/">WikiCountries</a>
-                    </div>
-                </nav>
-                <CountriesList />
-            </div>
+            <nav className="navbar navbar-dark bg-primary mb-3">
+                <div className="container">
+                    <a className="navbar-brand" href="/">LAB-WikiCountries</a>
+                </div>
+            </nav>
+            {/* <CountriesList /> */}
         </div>
     )
 }

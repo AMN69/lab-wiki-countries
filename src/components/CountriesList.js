@@ -4,24 +4,21 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom';
-import theCountries from '../countries.json';
+// import theCountries from '../countries.json';
 
-const CountriesList = () => {
+const CountriesList = (props) => {
+    const theCountries = props.countries;
     return (
-        
-        <div className="container">
-            <div className="row">
-                <div className="col-5" style={{maxheight: '90vh', overflow: 'scroll'}}>
-                    <div className="list-group">
-                        {theCountries.map((eachCountry) => {
-                            return <li className="list-group-item list-group-item-action"><Link key={eachCountry.cca3} to={`/${eachCountry.cca3}`}>{eachCountry.flag} {eachCountry.name.common}</Link></li>
-                         })
-                        }
-                    </div>
+        <div className="row">
+            <div className="col-5" style={{maxheight: '90vh', overflow: 'scroll'}}>
+                <div className="list-group">
+                    {theCountries.map((eachCountry) => {
+                        return <li key={eachCountry.cca3} className="list-group-item list-group-item-action"><Link to={`/${eachCountry.cca3}`}>{eachCountry.flag} {eachCountry.name.common}</Link></li>
+                        })
+                    }
                 </div>
             </div>
         </div>
-
     )
 }
 

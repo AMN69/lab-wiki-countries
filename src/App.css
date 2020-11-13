@@ -49,11 +49,8 @@
 .container {
   width: 50%;
 }
-
 .row {
   width: 50%;
-}
-
-.col-5 {
-  max-width: 50%;
+  margin-left: 5%;
+  padding-left: 5%;
 }
